@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     }
     public void GoToGame()
     {
+        Debug.Log("Clicked");
         SceneManager.LoadScene("Game");
     }
 }
