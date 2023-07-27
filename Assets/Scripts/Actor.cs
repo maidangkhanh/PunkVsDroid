@@ -6,7 +6,9 @@ public class Actor : MonoBehaviour
 {
     public Animator baseAnim;
     public Rigidbody body;
+    public SpriteRenderer baseSprite;
     public SpriteRenderer shadowSprite;
+
     public float speed = 2;
     protected Vector3 frontVector;
     public bool isGrounded;
