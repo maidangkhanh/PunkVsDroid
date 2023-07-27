@@ -1222,8 +1222,10 @@ MonoBehaviour:
   baseAnim: {fileID: 1563964142}
   body: {fileID: 1359246684}
   shadowSprite: {fileID: 466859030}
-  speed: 5
-  walkSpeed: 5
+  speed: 2
+  walkSpeed: 2
+  runSpeed: 5
+  canRun: 1
 --- !u!1 &1444034035
 GameObject:
   m_ObjectHideFlags: 0
