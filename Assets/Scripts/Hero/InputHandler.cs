@@ -5,21 +5,31 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    // TODO: research input system input
-    // input.Player.AttackOnRelease.performed += AttackOnRelease;
-    // input.Player.AttackOnHold.performed += AttackOnHold;
-    // input.Player.AttackOnDoubleTap.performed += AttackOnDoubleTap;
-    // input.Player.AttackOnRelease.Enable();
-    // input.Player.AttackOnHold.Enable();
-    // input.Player.AttackOnDoubleTap.Enable();
-    // input.Player.Dash.Enable();
     float horizontal;
     float vertical;
     bool jump;
     bool isJumping;
+    bool attack;
     public float maxJumpDuration = 0.2f;
 
     PunkVsDroid inputActions;
+
+    public float GetVerticalAxis()
+    {
+        return vertical;
+    }
+    public float GetHorizontalAxis()
+    {
+        return horizontal;
+    }
+    public bool GetJumpButtonDown()
+    {
+        return jump;
+    }
+    public bool GetAttackButtonDown()
+    {
+        return attack;
+    }
 
     private void Awake()
     {
@@ -29,10 +39,21 @@ public class InputHandler : MonoBehaviour
         inputActions.Player.Move.canceled += Move_canceled;
         inputActions.Player.Jump.performed += Jump_performed;
         inputActions.Player.Jump.canceled += Jump_canceled;
-
+        inputActions.Player.Attack.performed += Attack_performed;
+        inputActions.Player.Attack.canceled += Attack_canceled;
     }
 
-    private void Move_canceled(InputAction.CallbackContext obj)
+    private void Attack_canceled(InputAction.CallbackContext context)
+    {
+        attack = false;
+    }
+
+    private void Attack_performed(InputAction.CallbackContext context)
+    {
+        attack = true;
+    }
+
+    private void Move_canceled(InputAction.CallbackContext context)
     {
         horizontal = 0;
         vertical = 0;
@@ -59,16 +80,5 @@ public class InputHandler : MonoBehaviour
         vertical = context.ReadValue<Vector2>().y;
     }
 
-    public float GetVerticalAxis()
-    {
-        return vertical;
-    }
-    public float GetHorizontalAxis()
-    {
-        return horizontal;
-    }
-    public bool GetJumpButtonDown()
-    {
-        return jump;
-    }
+
  }

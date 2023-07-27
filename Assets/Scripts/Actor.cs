@@ -18,6 +18,11 @@ public class Actor : MonoBehaviour
         shadowSprite.transform.position = shadowSpritePosition;
     }
 
+    public virtual void Attack()
+    {
+        baseAnim.SetTrigger("Attack");
+    }
+
     protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.name == "Floor")
