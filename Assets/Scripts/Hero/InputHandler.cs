@@ -16,9 +16,48 @@ public class InputHandler : MonoBehaviour
     float horizontal;
     float vertical;
     bool jump;
-    float lastJumpTime;
     bool isJumping;
     public float maxJumpDuration = 0.2f;
+
+    PunkVsDroid inputActions;
+
+    private void Awake()
+    {
+        inputActions = new PunkVsDroid();
+        inputActions.Player.Enable();
+        inputActions.Player.Move.performed += Move_performed;
+        inputActions.Player.Move.canceled += Move_canceled;
+        inputActions.Player.Jump.performed += Jump_performed;
+        inputActions.Player.Jump.canceled += Jump_canceled;
+
+    }
+
+    private void Move_canceled(InputAction.CallbackContext obj)
+    {
+        horizontal = 0;
+        vertical = 0;
+    }
+
+    private void Jump_canceled(InputAction.CallbackContext context)
+    {
+        jump = false;
+        isJumping = false;
+    }
+
+    private void Jump_performed(InputAction.CallbackContext context)
+    {
+        if (!jump && !isJumping)
+        {
+            jump = true;
+            isJumping = true;
+        }
+    }
+
+    private void Move_performed(InputAction.CallbackContext context)
+    {
+        horizontal = context.ReadValue<Vector2>().x;
+        vertical = context.ReadValue<Vector2>().y;
+    }
 
     public float GetVerticalAxis()
     {
@@ -32,29 +71,4 @@ public class InputHandler : MonoBehaviour
     {
         return jump;
     }
-
-    void OnMove(InputValue value)
-    {
-        horizontal = value.Get<Vector2>().x;
-        vertical = value.Get<Vector2>().y;
-    }
-
-    void OnJump(InputValue value)
-    {
-        if (!jump && !isJumping)
-        jump = true;
-        lastJumpTime = Time.time;
-        isJumping = true;
-
-        if (jump && Time.time > lastJumpTime + maxJumpDuration)
-        {
-            jump = false;
-        }
-    }
-
-    void OnJumpCanceled(InputValue value)
-    {
-        jump = false;
-        isJumping = false;
-    }
-}
+ }

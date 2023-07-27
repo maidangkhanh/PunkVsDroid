@@ -35,20 +35,11 @@
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "1417b6da-d302-4b90-9533-aaf180bc8d68",
+                    "id": "11c2b992-0ef3-48ab-8da3-66dc3a409240",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ChargedJump",
-                    "type": "Button",
-                    "id": "7afc4525-bf96-4023-acea-c17a840ce4fe",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -274,23 +265,12 @@
                 },
                 {
                     "name": "",
-                    "id": "6ecc48e1-56b3-4ff0-af4c-613bd444e568",
+                    "id": "d700a4fa-1284-446e-aff3-6379b7e02e74",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7cb2226f-2940-4a6b-821d-16eada148935",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "ChargedJump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
