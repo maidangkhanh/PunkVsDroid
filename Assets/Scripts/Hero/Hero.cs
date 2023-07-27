@@ -14,11 +14,11 @@ public class Hero : MonoBehaviour
     [SerializeField] float walkSpeed = 2;
     [SerializeField] float runSpeed = 5;
 
+    // Walking and Running
     Vector3 currentDir;
     bool isFacingLeft;
     protected Vector3 frontVector;
-
-    bool isRunning;
+    bool isRunning; 
     bool isMoving;
     float lastWalk;
     public bool canRun = true;
@@ -73,7 +73,7 @@ public class Hero : MonoBehaviour
         {
             isMoving = true;
             float dotProduct = Vector3.Dot(currentDir, lastWalkVector);
-            if (canRun && Time.time < lastWalk + tapAgainToRunTime && dotProduct > 0)
+            if (canRun && (Time.time < lastWalk + tapAgainToRunTime) && dotProduct > 0)
             {
                 Run();
             }
