@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 199806985}
   - component: {fileID: 199806984}
   - component: {fileID: 199806983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,6 +272,9 @@ MonoBehaviour:
   shadowSprite: {fileID: 936583645}
   speed: 2
   isGrounded: 0
+  isAlive: 1
+  maxLife: 100
+  currentLife: 100
 --- !u!4 &199806986
 Transform:
   m_ObjectHideFlags: 0
@@ -299,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 334777234}
   - component: {fileID: 334777235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeroSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 377310229}
   - component: {fileID: 377310228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RobotBodySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466859029}
   - component: {fileID: 466859030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeroShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488419446}
   - component: {fileID: 488419447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RobotSmokeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1024,7 @@ GameObject:
   - component: {fileID: 813213687}
   - component: {fileID: 813213686}
   - component: {fileID: 813213685}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871350220}
   - component: {fileID: 871350221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RobotAnimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936583646}
   - component: {fileID: 936583645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RobotShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1294,7 @@ GameObject:
   - component: {fileID: 1108566366}
   - component: {fileID: 1108566365}
   - component: {fileID: 1108566364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1388,7 +1391,7 @@ GameObject:
   - component: {fileID: 1127744294}
   - component: {fileID: 1127744293}
   - component: {fileID: 1127744292}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1483,7 +1486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159352666}
   - component: {fileID: 1159352667}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightCameraBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1530,7 +1533,7 @@ GameObject:
   - component: {fileID: 1176799303}
   - component: {fileID: 1176799302}
   - component: {fileID: 1176799301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1625,7 +1628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354314373}
   - component: {fileID: 1354314374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RobotBeltSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1711,7 +1714,7 @@ GameObject:
   - component: {fileID: 1359246686}
   - component: {fileID: 1359246685}
   - component: {fileID: 1359246684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1782,6 +1785,9 @@ MonoBehaviour:
   shadowSprite: {fileID: 466859030}
   speed: 2
   isGrounded: 0
+  isAlive: 1
+  maxLife: 100
+  currentLife: 100
   walkSpeed: 2
   runSpeed: 5
   input: {fileID: 362064814}
@@ -1830,7 +1836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507746417}
   - component: {fileID: 1507746418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftCameraBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,7 +1882,7 @@ GameObject:
   - component: {fileID: 1563964141}
   - component: {fileID: 1563964142}
   - component: {fileID: 1563964143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeroAnimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +1950,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2034399782}
   - component: {fileID: 2034399783}
-  m_Layer: 0
+  - component: {fileID: 2034399784}
+  m_Layer: 8
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,3 +1986,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2034399784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034399781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a530544a3a26f4a9b82cfeadbbd130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 1359246686}
+  triggerCollider: {fileID: 2034399783}
