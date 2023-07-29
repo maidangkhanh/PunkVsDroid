@@ -135,4 +135,15 @@ public class Actor : MonoBehaviour
             i--;
         }
     }
+
+    // AI pathfinding
+    public virtual bool CanWalk()
+    {
+        return true;
+    }
+
+    public virtual void FaceTarget(Vector3 targetPoint)
+    {
+        FlipSprite(transform.position.x - targetPoint.x > 0);
+    }
 }
