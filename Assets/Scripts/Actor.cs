@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Actor : MonoBehaviour
 {
@@ -58,5 +59,23 @@ public class Actor : MonoBehaviour
             frontVector = new Vector3(1, 0, 0);
             transform.localScale = new Vector3(1, 1, 1);
         }
+    }
+
+    //1
+    public virtual void DidHitObject(Collider collider, Vector3 hitPoint, Vector3 hitVector)
+    {
+        Actor actor = collider.GetComponent<Actor>();
+        if (actor != null)
+        {
+            if (collider.attachedRigidbody != null)
+            {
+                HitActor(actor, hitPoint, hitVector);
+            }
+        }
+    }
+    //2
+    protected virtual void HitActor(Actor actor, Vector3 hitPoint, Vector3 hitVector)
+    {
+        Debug.Log(gameObject.name + " HIT " + actor.gameObject.name);
     }
 }
