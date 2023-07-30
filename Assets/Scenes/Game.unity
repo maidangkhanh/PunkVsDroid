@@ -220,7 +220,8 @@ GameObject:
   - component: {fileID: 199806983}
   - component: {fileID: 199806987}
   - component: {fileID: 199806988}
-  m_Layer: 6
+  - component: {fileID: 199806989}
+  m_Layer: 7
   m_Name: EnemyRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,6 +278,9 @@ MonoBehaviour:
   isAlive: 1
   maxLife: 100
   currentLife: 100
+  walker: {fileID: 199806988}
+  stopMovementWhenHit: 1
+  ai: {fileID: 199806989}
 --- !u!4 &199806986
 Transform:
   m_ObjectHideFlags: 0
@@ -291,6 +295,7 @@ Transform:
   m_Children:
   - {fileID: 936583646}
   - {fileID: 871350220}
+  - {fileID: 2057857668}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -329,6 +334,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 199806987}
+--- !u!114 &199806989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199806982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc52d855fcb75647baa45f9641b3466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackReachMin: 1
+  attackReachMax: 2
+  personalSpace: 0.75
+  detector: {fileID: 2057857666}
+  currentAction: 0
 --- !u!1 &334777233
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 377310229}
   - component: {fileID: 377310228}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RobotBodySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488419446}
   - component: {fileID: 488419447}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RobotSmokeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871350220}
   - component: {fileID: 871350221}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RobotAnimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1213,7 +1235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936583646}
   - component: {fileID: 936583645}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RobotShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1665,7 +1687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354314373}
   - component: {fileID: 1354314374}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RobotBeltSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,7 +1775,7 @@ GameObject:
   - component: {fileID: 1359246684}
   m_Layer: 6
   m_Name: Hero
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1988,7 +2010,7 @@ GameObject:
   - component: {fileID: 1598712244}
   - component: {fileID: 1598712246}
   - component: {fileID: 1598712245}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2097,3 +2119,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 1359246686}
   triggerCollider: {fileID: 2034399783}
+--- !u!1 &2057857665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057857668}
+  - component: {fileID: 2057857667}
+  - component: {fileID: 2057857666}
+  m_Layer: 8
+  m_Name: HeroDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2057857666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057857665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53baeab0b7daba4f9917ea690bb41f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroIsNearby: 0
+--- !u!135 &2057857667
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057857665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2057857668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057857665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 199806986}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -6,6 +6,7 @@ public class Enemy : Actor
     public static int TotalEnemies;
     public Walker walker;
     public bool stopMovementWhenHit = true;
+    public EnemyAI ai;
     public void RegisterEnemy()
     {
         TotalEnemies++;
@@ -15,6 +16,7 @@ public class Enemy : Actor
         base.Die();
         walker.enabled = false;
         TotalEnemies--;
+        ai.enabled = false;
     }
 
     public void MoveTo(Vector3 targetPosition)
