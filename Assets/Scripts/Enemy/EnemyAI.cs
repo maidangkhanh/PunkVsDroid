@@ -42,10 +42,8 @@ public class EnemyAI : MonoBehaviour
     {
         float sqrDistance = Vector3.SqrMagnitude(
         heroObj.transform.position - transform.position);
-        bool canReach = attackReachMin * attackReachMin < sqrDistance
-        && sqrDistance < attackReachMax * attackReachMax;
-        bool samePlane = Mathf.Abs(heroObj.transform.position.z -
-        transform.position.z) < 0.5f;
+        bool canReach = attackReachMin * attackReachMin < sqrDistance && sqrDistance < attackReachMax * attackReachMax;
+        bool samePlane = Mathf.Abs(heroObj.transform.position.z - transform.position.z) < 0.5f;
         if (canReach && currentAction == EnemyAction.Chase)
         {
             SetDecision(EnemyAction.Wait);
