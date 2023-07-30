@@ -40,21 +40,16 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        //1
         float sqrDistance = Vector3.SqrMagnitude(
         heroObj.transform.position - transform.position);
-        //2
         bool canReach = attackReachMin * attackReachMin < sqrDistance
         && sqrDistance < attackReachMax * attackReachMax;
-        //3
         bool samePlane = Mathf.Abs(heroObj.transform.position.z -
         transform.position.z) < 0.5f;
-        //4
         if (canReach && currentAction == EnemyAction.Chase)
         {
             SetDecision(EnemyAction.Wait);
         }
-        //5
         if (decisionDuration > 0.0f)
         {
             decisionDuration -= Time.deltaTime;
@@ -99,20 +94,17 @@ public class EnemyAI : MonoBehaviour
         decisionDuration = Random.Range(0.2f, 0.4f);
     }
 
-    //1
     private void Wait()
     {
         decisionDuration = Random.Range(0.2f, 0.5f);
         enemy.Wait();
     }
-    //2
     private void Attack()
     {
         enemy.FaceTarget(heroObj.transform.position);
         enemy.Attack();
         decisionDuration = Random.Range(1.0f, 1.5f);
     }
-    //3
     private void Roam()
     {
         float randomDegree = Random.Range(0, 360);
@@ -128,7 +120,6 @@ public class EnemyAI : MonoBehaviour
     private void DecideWithWeights(int attack, int wait, int chase, int move)
     {
         weights.Clear();
-        //1
         if (attack > 0)
         {
             weights.Add(new DecisionWeight(attack, EnemyAction.Attack));
@@ -145,10 +136,8 @@ public class EnemyAI : MonoBehaviour
         {
             weights.Add(new DecisionWeight(move, EnemyAction.Roam));
         }
-        //2
         int total = attack + chase + wait + move;
         int intDecision = Random.Range(0, total - 1);
-        //3
         foreach (DecisionWeight weight in weights)
         {
             intDecision -= weight.weight;
@@ -160,7 +149,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    //4
     private void SetDecision(EnemyAction action)
     {
         currentAction = action; if (action == EnemyAction.Attack)

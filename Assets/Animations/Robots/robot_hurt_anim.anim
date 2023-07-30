@@ -25,19 +25,10 @@ AnimationClip:
       value: {fileID: 21300000, guid: 0360fed79593d3e43a076ccc4b94719f, type: 3}
     - time: 0.16666667
       value: {fileID: 21300000, guid: fe0510e602f2b544b8c85730ba9cef14, type: 3}
+    - time: 1
+      value: {fileID: 21300000, guid: 38fdc95cd687b274590f356cec3d79c3, type: 3}
     attribute: m_Sprite
-    path: EnemyBody
-    classID: 212
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 21300000, guid: cfd96336259a64a4c929f2cfff687d0f, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300000, guid: ac4e224627fb7bc4da9ac2c9516fb2ac, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 33c02a21e7eece44da5c57cbdf342d3f, type: 3}
-    attribute: m_Sprite
-    path: EnemyBelt
+    path: RobotBodySprite
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -47,8 +38,23 @@ AnimationClip:
       value: {fileID: 21300000, guid: f66dfdfe9bdcf2848a81936085104e4e, type: 3}
     - time: 0.16666667
       value: {fileID: 21300000, guid: e1990a7cd6e6c124b9450cf4971a04d2, type: 3}
+    - time: 1.0833334
+      value: {fileID: 21300000, guid: eaa4d030463441749a751e93e38af814, type: 3}
     attribute: m_Sprite
-    path: EnemySmoke
+    path: RobotSmokeSprite
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: cfd96336259a64a4c929f2cfff687d0f, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: ac4e224627fb7bc4da9ac2c9516fb2ac, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: 33c02a21e7eece44da5c57cbdf342d3f, type: 3}
+    - time: 1.1666667
+      value: {fileID: 21300000, guid: 3e1d8a085d279f7478fbef84da321c3d, type: 3}
+    attribute: m_Sprite
+    path: RobotBeltSprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 12
@@ -59,21 +65,21 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1955948167
+      path: 3869268444
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 3479836132
+      path: 1198215292
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 525996084
+      path: 3250366775
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -83,18 +89,21 @@ AnimationClip:
     - {fileID: 21300000, guid: a2ac41eeea0eace43a2b9eaf17b78b17, type: 3}
     - {fileID: 21300000, guid: 0360fed79593d3e43a076ccc4b94719f, type: 3}
     - {fileID: 21300000, guid: fe0510e602f2b544b8c85730ba9cef14, type: 3}
-    - {fileID: 21300000, guid: cfd96336259a64a4c929f2cfff687d0f, type: 3}
-    - {fileID: 21300000, guid: ac4e224627fb7bc4da9ac2c9516fb2ac, type: 3}
-    - {fileID: 21300000, guid: 33c02a21e7eece44da5c57cbdf342d3f, type: 3}
+    - {fileID: 21300000, guid: 38fdc95cd687b274590f356cec3d79c3, type: 3}
     - {fileID: 21300000, guid: 50229c28ff4f84245961e86b145abdf6, type: 3}
     - {fileID: 21300000, guid: f66dfdfe9bdcf2848a81936085104e4e, type: 3}
     - {fileID: 21300000, guid: e1990a7cd6e6c124b9450cf4971a04d2, type: 3}
+    - {fileID: 21300000, guid: eaa4d030463441749a751e93e38af814, type: 3}
+    - {fileID: 21300000, guid: cfd96336259a64a4c929f2cfff687d0f, type: 3}
+    - {fileID: 21300000, guid: ac4e224627fb7bc4da9ac2c9516fb2ac, type: 3}
+    - {fileID: 21300000, guid: 33c02a21e7eece44da5c57cbdf342d3f, type: 3}
+    - {fileID: 21300000, guid: 3e1d8a085d279f7478fbef84da321c3d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.25
+    m_StopTime: 1.2500001
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -1,10 +1,8 @@
 using UnityEngine;
 public class HitForwarder : MonoBehaviour
 {
-    //1
     public Actor actor;
     public Collider triggerCollider;
-    //2
     void OnTriggerEnter(Collider hitCollider)
     {
         Vector3 direction = new Vector3(hitCollider.transform.position.x -
