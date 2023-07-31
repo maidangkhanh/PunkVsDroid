@@ -36,6 +36,10 @@ public class Hero : Actor
     public override void Update()
     {
         base.Update();
+        if (!isAlive)
+        {
+            return;
+        }
 
         isAttackingAnim = baseAnim.GetCurrentAnimatorStateInfo(0).IsName("attack1");
         isJumpLandAnim = baseAnim.GetCurrentAnimatorStateInfo(0).IsName("jump_land");
