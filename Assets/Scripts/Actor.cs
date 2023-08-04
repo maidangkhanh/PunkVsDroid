@@ -74,14 +74,13 @@ public class Actor : MonoBehaviour
 
     public virtual void DidHitObject(Collider collider, Vector3 hitPoint, Vector3 hitVector)
     {
+       
         Actor actor = collider.GetComponent<Actor>();
         if (actor != null && actor.CanBeHit() && collider.tag != gameObject.tag)
         {
+            if (collider.attachedRigidbody != null)
             {
-                if (collider.attachedRigidbody != null)
-                {
-                    HitActor(actor, hitPoint, hitVector);
-                }
+                HitActor(actor, hitPoint, hitVector);
             }
         }
     }
